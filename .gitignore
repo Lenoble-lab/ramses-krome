@@ -1,0 +1,12 @@
+#compile file
+*.o 
+*.mod 
+*.log
+/ramse*
+ramses1d
+ramses3d
+.vscode/
+
+*.DS_Store
+.DS_Store
+
