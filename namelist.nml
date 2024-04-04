@@ -1,0 +1,93 @@
+&RUN_PARAMS 
+cosmo=.true.
+pic=.true.
+poisson=.true.
+hydro=.true.
+rt=.false.
+sink=.false.
+clumpfind=.false.
+nrestart=0
+nremap=10
+nsubcycle=5*1,10*2
+ncontrol=1
+/
+
+&OUTPUT_PARAMS
+noutput=25
+!aout=0.013,0.016,0.019,0.022,0.025,0.028,0.031,0.034,0.037,0.03703704,0.03903704,0.04103704,0.04303704,0.04503704,0.04703704,0.04903704,0.05103704,0.05303704,0.05503704,0.05703704,0.05903704,0.06103704
+aout = 0.01960784, 0.02149321, 0.02337858, 0.02526395, 0.02714932,0.02903469, 0.03092006, 0.03280543, 0.0346908 , 0.03657617,0.03846154, 0.04017857, 0.0418956 , 0.04361264, 0.04532967,0.0470467 , 0.04876374, 0.05048077, 0.0521978 , 0.05391484,0.05563187, 0.0573489 , 0.05906593, 0.06078297, 0.0625
+/
+
+&INIT_PARAMS
+filetype='grafic'
+initfile(1)='../../ICs/01_unigrid/ics_ramses_half_box/level_009'
+/
+
+
+&AMR_PARAMS
+levelmin=9
+levelmax=23
+ngridmax=800000
+npartmax=1000000
+IOGROUPSIZE=1440
+/
+
+&POISSON_PARAMS
+cic_levelmax=14
+/
+
+
+&SF_PARAMS
+n_star=-1                          ! Density threshold for star formation
+eps_star=0                     ! Star formation efficiency (% of free-fall time)
+T2_star=10                        ! Cooling floor (in Kelvin)
+g_star=1.
+/
+
+
+&HYDRO_PARAMS
+gamma=1.6666666666667
+courant_factor=0.8
+slope_type=1
+pressure_fix=.true.
+beta_fix=0.5
+riemann='hllc'
+/
+
+&COOLING_PARAMS
+cooling = .true.
+krome_chem = .true.
+/
+
+&REFINE_PARAMS
+jeans_refine=10*4.
+m_refine=10*8.
+interpol_type=0
+interpol_var=1
+/
+
+&MOVIE_PARAMS 
+movie = .true. 
+astartmov=0.0
+aendmov = 0.0625
+imovout=500  ! number of frames
+imov=1
+nw_frame=500 ! Movie frame resolution
+nh_frame=500
+levelmax_frame=11
+xcentre_frame= 0.5, 0., 0., 0.
+ycentre_frame= 0.5, 0., 0., 0.
+zcentre_frame= 0.5, 0., 0., 0.
+deltax_frame= 1.0, 0.0
+deltay_frame= 1.0, 0.0
+deltaz_frame= 1.0, 0.0
+proj_axis='z'
+movie_vars_txt = 'dens', 'temp'
+perspective_camera = .true.,  .true.
+shader_frame =       'cube', 'cube'
+dtheta_camera=       1000.,        2000.
+phi_camera=          65.,        65.
+focal_camera=        1.5,        1.5
+dist_camera=         1.5,        1.5
+/
+
