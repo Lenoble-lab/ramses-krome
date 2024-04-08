@@ -5,6 +5,7 @@ This is the code used in the paper [Lenoble et al 2024](https://ui.adsabs.harvar
 
 It reads Graphic files that can be generated with Music [Hahn et al 2011]. It simulates the environement in which the first stars appear. 
 
+It should be compile with the GNU compiler, see bin/Makefile
 
 License and acknowledgement policy
 ----------------------------------

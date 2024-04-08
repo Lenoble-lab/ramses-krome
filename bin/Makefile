@@ -17,7 +17,7 @@ NPRE = 8
 # hydro/mhd solver
 SOLVER = hydro
 # Patch
-PATCH = ../patch/krome/09_gontel_ini_HD_cooling
+PATCH = ../patch/krome
 # Use RT? 1=Yes, 0=No
 RT = 0
 # Use MPI? 1=Yes, 0=No
